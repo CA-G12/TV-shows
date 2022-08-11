@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="main.css">
-    <title>TV Shows</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="main.css">
+  <title>TV Shows</title>
 </head>
+
 <body>
-    <div class="container">
-        <section class="serch">
-            <div class="logo"><i class="fa-solid fa-tv"></i></div>
-            <h2>Serch for TV shows:</h2>
-            <form action="/serch" method="get">
-                <input type="text" name="q" placeholder="Enter series name">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
-        </section>
-        <section class="content"></section>
-    </div>
-<script src="script.js"></script>
-<script src="dom.js"></script>
+  <div class="container">
+    <section class="serch">
+      <div class="logo"><i class="fa-solid fa-tv"></i></div>
+      <h2>Serch for TV shows:</h2>
+      <form action="/serch" method="get">
+        <input type="text" name="q" placeholder="Enter series name">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </section>
+
+    <section class="content">
+      <figure class="movie">
+        <div class="movie__hero">
+          <img src="https://www.mensjournal.com/wp-content/uploads/2018/10/rambo-main-3.jpg?quality=86&strip=all"
+            alt="Rambo" class="movie__img">
+        </div>
+        <div class="movie__content">
+          <div class="movie__title">
+            <h1 class="heading__primary">First Blood Part II <i class="fas fa-fire"></i></h1>
+          </div>
+          <p class="movie__description">
+            First Blood is a 1982 American action film directed by Ted Kotcheff, and co-written by Sylvester
+            Stallone, who also stars as Vietnam War veteran John Rambo.
+          </p>
+          <div class="movie__details">
+            <p class="movie__detail"><span class="icons icons-red"><i class="fas fa-camera-retro"></i> </span>Buzz
+              Feitshans</p>
+            <p class="movie__detail"><span class="icons icons-grey"><i class="fas fa-clock"></i> </span>1h 33m</p>
+            <p class="movie__detail"><span class="icons icons-yellow"><i class="fas fa-file-invoice-dollar"></i>
+              </span>rating 7/10</p>
+          </div>
+        </div>
+
+      </figure>
+    </section>
+
+
+
+
+  </div>
+  <script src="script.js"></script>
+  <script src="dom.js"></script>
 </body>
+
 </html>
