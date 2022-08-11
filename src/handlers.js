@@ -14,6 +14,22 @@ const handleHomePage = (req,res)=>{
         }
     })
 }
+
+const handleJsonFile = (req,res)=>{
+    const filePath=path.join(__dirname,'data.json')
+    fs.readFile(filePath,(err,data)=>{
+        if(err){
+            res.writeHead(500,{"Content-Type":"text/html"});
+            console.log(err);
+            res.end("<h1>Server Error</h1>")
+        }
+        else{
+            res.writeHead(200,{"Content-Type":"application/json"});
+            res.end(data)
+        }
+    })
+}
+
 const handlePublicFiles = (req,res,endpoint)=>{
     const filePath=path.join(__dirname,'..',endpoint)
     fs.readFile(filePath,(err,data)=>{
@@ -27,4 +43,4 @@ const handlePublicFiles = (req,res,endpoint)=>{
         }
     })
 }
-module.exports={handleHomePage,handlePublicFiles};
+module.exports={handleHomePage,handlePublicFiles, handleJsonFile};
