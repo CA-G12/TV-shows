@@ -8,8 +8,8 @@ const router = (req, res) => {
     handlers.handlePublicFiles(req,res,endpoint);
   }
 
-  else if (endpoint === "/data") {
-    handlers.handleJsonFile(req, res)
+  else if (endpoint.includes("/data")) {
+    handlers.handleJsonFile(req, res,endpoint)
   }
 
   // else if (endpoint.includes("search")) {
