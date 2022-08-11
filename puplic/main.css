@@ -14,11 +14,12 @@
 body {
     background-color: var(--mainColor);
     color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
 
 .container {
-    padding: 40px 0;
+    padding: 60px 0;
     width: 80%;
     min-height: 100vh;
     margin: 0 auto;
@@ -27,4 +28,67 @@ body {
     justify-content: center;
     gap: 4rem;
     align-items: center;
+}
+
+section.serch {
+    width: 500px;
+    margin: 0 auto;
+    height: 350px;
+    background-color: #003566;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 5px 24px 6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 24px 6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 24px 6px rgba(0, 0, 0, 0.75);
+}
+
+section.serch h2 {
+    width: 100%;
+    text-align: center;
+}
+
+section.serch form {
+    display: flex;
+    position: relative;
+}
+
+section.serch input {
+    width: 400px;
+    height: 55px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    padding: 0 15px;
+
+}
+
+section.serch button {
+    width: 50px;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    border: none;
+    outline: none;
+    background-color: #ffd60a;
+    font-size: 20px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    cursor: pointer;
+}
+
+section.serch button i {
+    transition: all .4s ease;
+    color: #003566;
+}
+
+section.serch button:hover i {
+    transform: scale(1.4);
+}
+section.serch .logo {
+    font-size: 80px;
 }
