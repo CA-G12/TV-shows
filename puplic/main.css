@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainColor: #001d3d;
+    --secColor: #003566;
+    --thirdColor: #ffc300;
+    --fourthColor: #ffd60a;
+}
+
+body {
+    background-color: var(--mainColor);
+    color: #fff;
+
+}
+
+.container {
+    padding: 40px 0;
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+}
