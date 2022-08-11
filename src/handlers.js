@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const querystring = require("querystring");
 const handleHomePage = (req,res)=>{
     const filePath=path.join(__dirname,'..','public','index.html')
     fs.readFile(filePath,(err,data)=>{
@@ -15,7 +16,8 @@ const handleHomePage = (req,res)=>{
     })
 }
 
-const handleJsonFile = (req,res)=>{
+const handleJsonFile = (req,res,endpoint)=>{
+    let newEndpoint=endpoint.split('=')[1]
     const filePath=path.join(__dirname,'data.json')
     fs.readFile(filePath,(err,data)=>{
         if(err){
@@ -24,8 +26,15 @@ const handleJsonFile = (req,res)=>{
             res.end("<h1>Server Error</h1>")
         }
         else{
+            const convertedData = querystring.parse(newEndpoint);
+            let key=Object.keys(convertedData).join('')
+            let Alldata=JSON.parse(data)
+            const filterData = Alldata.filter((e) =>{
+            let n =e['name'].toLowerCase()
+            return n.includes(key.toLowerCase());
+            });
             res.writeHead(200,{"Content-Type":"application/json"});
-            res.end(data)
+            res.end(JSON.stringify(filterData))
         }
     })
 }

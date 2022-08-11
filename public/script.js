@@ -1,4 +1,4 @@
-const fetch = () => {
+const fetch = (endpoint) => {
   const xhr = new XMLHttpRequest()
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4) {
@@ -9,8 +9,6 @@ const fetch = () => {
       }
     }
   }
-  xhr.open("GET", "/data")
+  xhr.open("GET", `/data?q=${endpoint}`)
   xhr.send()
 }
-
-fetch()
