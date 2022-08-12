@@ -14,6 +14,18 @@ const handleHomePage = (req, res) => {
     }
   });
 };
+const handleNotFoundPage = (req, res) => {
+  const filePath = path.join(__dirname, '..', 'public', 'not_found.html');
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(500, { 'Content-Type': 'text/html' });
+      res.end('<h1>Server Error</h1>');
+    } else {
+      res.writeHead(404, { 'Content-Type': 'text/html' });
+      res.end(data);
+    }
+  });
+};
 
 const handleJsonFile = (req, res, endpoint) => {
   const newEndpoint = endpoint.split('=')[1];
@@ -48,4 +60,9 @@ const handlePublicFiles = (req, res, endpoint) => {
     }
   });
 };
-module.exports = { handleHomePage, handlePublicFiles, handleJsonFile };
+module.exports = {
+  handleHomePage,
+  handlePublicFiles,
+  handleJsonFile,
+  handleNotFoundPage,
+};
