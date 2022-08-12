@@ -18,6 +18,7 @@ const fetch = (endpoint, cb) => {
 
 const createTags = (tag) => document.createElement(tag);
 const moviesCard = (movies, parent) => {
+  parent.textContent='';
   const figureTag = createTags('figure');
   figureTag.setAttribute('class', 'movie');
 
@@ -96,6 +97,7 @@ const moviesCard = (movies, parent) => {
   figureTag.appendChild(contentDiv);
 
   parent.appendChild(figureTag);
+  window.scrollTo(0, 500);
 };
 const externalFetch = (title, content) => {
   const xhr = new XMLHttpRequest();
@@ -125,6 +127,7 @@ function generateAutoCompleteResults(data, container, content) {
       li.addEventListener('click', (e) => {
         const requiredMovie = e.target;
         externalFetch(requiredMovie.textContent, content);
+        container.classList.remove('active');
       });
       container.appendChild(li);
     }
@@ -132,7 +135,7 @@ function generateAutoCompleteResults(data, container, content) {
     // eslint-disable-next-line no-param-reassign
     container.textContent = '';
     const li = document.createElement('li');
-    li.textContent = 'No result Found 😾';
+    li.textContent = 'No result Found 😡💢';
     li.style.backgroundColor = 'red';
     li.style.color = '#fff';
     container.appendChild(li);
