@@ -1,7 +1,6 @@
 const handlers = require('./handlers');
 
 const router = (req, res) => {
-  console.log(req.status);
   const endpoint = req.url;
   if (endpoint === '/') {
     handlers.handleHomePage(req, res);

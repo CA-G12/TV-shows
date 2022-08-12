@@ -21,7 +21,6 @@ const handleJsonFile = (req, res, endpoint) => {
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(500, { 'Content-Type': 'text/html' });
-      console.log(err);
       res.end('<h1>Server Error</h1>');
     } else {
       const convertedData = querystring.parse(newEndpoint);
