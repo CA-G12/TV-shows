@@ -1,6 +1,10 @@
 const Content = document.querySelector('.content');
 const input = document.querySelector('input');
 const results = document.querySelector('ul.results');
+const topp = document.querySelector('.agin');
+document.querySelector('button').addEventListener('click',(e)=>{
+  e.preventDefault()
+})
 input.addEventListener('input', (e) => {
   const endpoint = e.target.value;
   // eslint-disable-next-line no-undef
@@ -10,4 +14,5 @@ input.addEventListener('input', (e) => {
   } else {
     results.classList.remove('active');
   }
+   
 });
