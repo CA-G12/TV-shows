@@ -135,7 +135,7 @@ function generateAutoCompleteResults(data, container, content) {
     // eslint-disable-next-line no-param-reassign
     container.textContent = '';
     const li = document.createElement('li');
-    li.textContent = 'No result Found 😾';
+    li.textContent = 'No result Found 😡💢';
     li.style.backgroundColor = 'red';
     li.style.color = '#fff';
     container.appendChild(li);
