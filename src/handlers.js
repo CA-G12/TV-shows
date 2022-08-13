@@ -48,7 +48,7 @@ const handleJsonFile = (req, res, endpoint) => {
     }
   });
 };
-const exs = {
+const extensions = {
   'js': 'text/javascript',
   'css': 'text/css',
   'html': 'text/html',
@@ -62,7 +62,7 @@ const handlePublicFiles = (req, res, endpoint) => {
       res.end('<h1>Server Error</h1>');
     } else {
       // make the content type dynamic
-      res.writeHead(200, { 'Content-Type': `${exs[fileExtinction]}` });
+      res.writeHead(200, { 'Content-Type': `${extensions[fileExtinction]}` });
       res.end(data);
     }
   });
