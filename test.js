@@ -13,7 +13,7 @@ test('Home page routing test', (done) => {
 test('JS script file routing test', (done) => {
   supertest(router).get('/public/script.js')
     .expect(200)
-    .expect('Content-Type', /html/)
+    .expect('Content-Type', /javascript/)
     .end((err) => (err ? done(err) : done()));
 });
 
@@ -21,7 +21,7 @@ test('JS script file routing test', (done) => {
 test('JS DOM file routing test', (done) => {
   supertest(router).get('/public/dom.js')
     .expect(200)
-    .expect('Content-Type', /html/)
+    .expect('Content-Type', /javascript/)
     .end((err) => (err ? done(err) : done()));
 });
 
@@ -29,7 +29,7 @@ test('JS DOM file routing test', (done) => {
 test('CSS file routing test', (done) => {
   supertest(router).get('/public/main.css')
     .expect(200)
-    .expect('Content-Type', /html/)
+    .expect('Content-Type', /css/)
     .end((err) => (err ? done(err) : done()));
 });
 
