@@ -1,3 +1,4 @@
+/* eslint-disable quote-props */
 const fs = require('fs');
 const path = require('path');
 const querystring = require('querystring');
@@ -47,15 +48,21 @@ const handleJsonFile = (req, res, endpoint) => {
     }
   });
 };
-
+const exs = {
+  'js': 'text/javascript',
+  'css': 'text/css',
+  'html': 'text/html',
+};
 const handlePublicFiles = (req, res, endpoint) => {
   const filePath = path.join(__dirname, '..', endpoint);
+  const fileExtinction = endpoint.split('.')[1];
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(500, { 'Content-Type': 'text/html' });
       res.end('<h1>Server Error</h1>');
     } else {
-      res.writeHead(200, { 'Content-Type': 'text/html' });
+      // make the content type dynamic
+      res.writeHead(200, { 'Content-Type': `${exs[fileExtinction]}` });
       res.end(data);
     }
   });
